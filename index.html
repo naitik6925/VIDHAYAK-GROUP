@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidhayak Group - Royal Taste</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="1.jpg.jpeg" class="logo">
+    <h1>VIDHAYAK GROUP</h1>
+    <p class="tagline">Royal Taste in Every Sip</p>
+</header>
+
+<section class="hero">
+    <h2>Premium Indian Tea Brand</h2>
+    <p>Strong • Fresh • Aromatic</p>
+</section>
+
+<section class="products">
+
+<!-- PREMIUM TEA 480 -->
+<div class="card">
+    <img src="480.jpg.jpeg">
+    <h3>ROYAL Tea 1kg</h3>
+    <h4>₹480</h4>
+    <input type="number" id="qty1" value="1" min="1">
+    <button onclick="order('Royal Tea 1kg', 'qty1')">Order Now</button>
+</div>
+
+<!-- MASALA 60 -->
+<div class="card">
+    <img src="E:\c-t-m\60masala.jpg.jpeg">
+    <h3> ROYAL Tea Masala 60₹ Pack</h3>
+    <h4>₹60</h4>
+    <input type="number" id="qty2" value="1" min="1">
+    <button onclick="order(' ROYAL Tea Masala 60₹ Pack', 'qty2')">Order Now</button>
+</div>
+
+<!-- MASALA 10 & 20 -->
+<div class="card">
+    <img src="10and20masala.jpg.jpeg">
+    <h3>Tea Masala 10₹ / 20₹ Pack</h3>
+    <h4>₹10 / ₹20</h4>
+    <input type="number" id="qty3" value="1" min="1">
+    <button onclick="order(' ROYAL Tea Masala 10 or 20 Rupees Pack', 'qty3')">Order Now</button>
+</div>
+
+<!-- EXTRA PREMIUM OPTION -->
+<div class="card">
+    <img src="380.gpj.jpeg">
+    <h3>PREMIUM Tea Special Pack</h3>
+    <h4>₹380</h4>
+    <input type="number" id="qty4" value="1" min="1">
+    <button onclick="order('Premium Tea Special Pack', 'qty4')">Order Now</button>
+</div>
+
+</section>
+
+<a href="https://wa.me/917048227420?text=Hello I want to know more about Vidhayak Tea"
+   class="whatsapp">
+   Order on WhatsApp
+</a>
+
+<footer>
+    © 2026 Vidhayak Tea | All Rights Reserved
+</footer>
+
+<script>
+function order(product, qtyId) {
+    var qty = document.getElementById(qtyId).value;
+    var message = "Hello, I want to order " + product + " Quantity: " + qty;
+    var url = "https://wa.me/917048227420?text=" + encodeURIComponent(message);
+    window.open(url, '_blank');
+}
+</script>
+
+<div style="background:#f2f2f2;padding:40px;margin-top:50px;border-radius:15px;max-width:500px;margin-left:auto;margin-right:auto;">
+
+<h2 style="color:#00ff88;text-align:center;">Place Your Order</h2>
+
+<form onsubmit="sendToWhatsApp(); return false;">
+
+<input type="text" id="name" placeholder="Your Name" required
+style="width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none;">
+
+<input type="tel" id="phone" placeholder="Your Phone Number" required
+style="width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none;">
+
+<textarea id="address" placeholder="Your Full Address" required
+style="width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none;"></textarea>
+
+<select id="product"
+style="width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none;">
+<option>ROYAL Tea 480/KG</option>
+<option>PREMIUM TEA 380/KG </option>
+<option>ROYAL Tea Masala 60 Rs</option>
+<option>ROYAL Tea Masala 10 / 20 Rs</option>
+</select>
+
+<input type="number" id="quantity" placeholder="Quantity" required
+style="width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none;">
+
+<button type="submit"
+style="width:100%;padding:15px;background:#25D366;color:white;font-size:18px;border:none;border-radius:50px;">
+Order on WhatsApp
+</button>
+
+</form>
+
+</div>
+
+<script>
+function sendToWhatsApp(){
+var name = document.getElementById("name").value;
+var phone = document.getElementById("phone").value;
+var address = document.getElementById("address").value;
+var product = document.getElementById("product").value;
+var quantity = document.getElementById("quantity").value;
+
+var message = "New Order:%0A"
++ "Name: " + name + "%0A"
++ "Phone: " + phone + "%0A"
++ "Address: " + address + "%0A"
++ "Product: " + product + "%0A"
++ "Quantity: " + quantity;
+
+window.open("https://wa.me/917048227420?text=" + message, "_blank");
+}
+</script>
+
+</body>
+</html>
